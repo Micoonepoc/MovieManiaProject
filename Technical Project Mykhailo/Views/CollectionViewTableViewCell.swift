@@ -1,7 +1,7 @@
 import UIKit
 
 protocol CollectionViewTableViewCellDelegate: AnyObject {
-    func collectionViewTableViewCellDidTapCell(_ cell: CollectionViewTableViewCell, viewModel: PreviewViewModel)
+    func collectionViewTableViewCellDidTapCell(_ cell: CollectionViewTableViewCell, viewModel: PreviewModel)
 }
 
 protocol SegmentedIndexChange: AnyObject {
@@ -145,7 +145,7 @@ extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionVie
                     guard let strongSelf = self else {
                         return
                     }
-                    let viewModel = PreviewViewModel(title: titleName, youtubeVideo: result, titleOverView: titleOverview, rating: rating, vote_count: voteCount)
+                    let viewModel = PreviewModel(title: titleName, youtubeVideo: result, titleOverView: titleOverview, rating: rating, vote_count: voteCount)
                     self?.delegate?.collectionViewTableViewCellDidTapCell(strongSelf, viewModel: viewModel)
                     
                 }
@@ -168,7 +168,7 @@ extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionVie
                     guard let strongSelf = self else {
                         return
                     }
-                    let viewModel = PreviewViewModel(title: titleName, youtubeVideo: result, titleOverView: titleOverview, rating: rating, vote_count: voteCount)
+                    let viewModel = PreviewModel(title: titleName, youtubeVideo: result, titleOverView: titleOverview, rating: rating, vote_count: voteCount)
                     self?.delegate?.collectionViewTableViewCellDidTapCell(strongSelf, viewModel: viewModel)
                     
                 }

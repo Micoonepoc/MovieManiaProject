@@ -67,7 +67,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         
         
         let title = titles[indexPath.row]
-        let model = TitleViewModel(titleName: title.original_title ?? "", posterURL: title.poster_path ?? "", overview: title.overview ?? "", rating: title.vote_average)
+        let model = TitleModel(titleName: title.original_title ?? "", posterURL: title.poster_path ?? "", overview: title.overview ?? "", rating: title.vote_average)
         cell.configure(with: model)
         
         return cell;
@@ -91,7 +91,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         NetworkService.shared.getYouTubeResponse(with: titleName + " trailer") { [weak self] result in
                 DispatchQueue.main.async {
                     let vc = PreviewViewController()
-                    vc.configure(with: PreviewViewModel(title: titleName, youtubeVideo: result, titleOverView: title.overview ?? "", rating: Double(title.vote_average), vote_count: title.vote_count))
+                    vc.configure(with: PreviewModel(title: titleName, youtubeVideo: result, titleOverView: title.overview ?? "", rating: Double(title.vote_average), vote_count: title.vote_count))
                     self?.navigationController?.pushViewController(vc, animated: true)
                 }
         }
@@ -121,7 +121,7 @@ extension SearchViewController: UISearchResultsUpdating, SearchResultsViewContro
         }
         
     }
-    func searchResultsViewControllerDidTapItem(_ viewModel: PreviewViewModel) {
+    func searchResultsViewControllerDidTapItem(_ viewModel: PreviewModel) {
         
         DispatchQueue.main.async { [weak self] in
             let vc = PreviewViewController()

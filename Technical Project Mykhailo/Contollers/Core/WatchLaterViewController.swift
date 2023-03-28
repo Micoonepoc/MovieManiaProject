@@ -142,10 +142,10 @@ extension WatchLaterViewController: UITableViewDelegate, UITableViewDataSource {
             
         case true:
             let title = titles[indexPath.row]
-            cell.configure(with: TitleViewModel(titleName: title.original_title ?? "", posterURL: title.poster_path ?? "", overview: title.overview ?? "", rating: title.vote_average))
+            cell.configure(with: TitleModel(titleName: title.original_title ?? "", posterURL: title.poster_path ?? "", overview: title.overview ?? "", rating: title.vote_average))
         case false:
             let title = tvTitles[indexPath.row]
-            cell.configure(with: TitleViewModel(titleName: title.name ?? "", posterURL: title.poster_path ?? "", overview: title.overview ?? "", rating: title.vote_average))
+            cell.configure(with: TitleModel(titleName: title.name ?? "", posterURL: title.poster_path ?? "", overview: title.overview ?? "", rating: title.vote_average))
         }
         return cell
        
@@ -204,7 +204,7 @@ extension WatchLaterViewController: UITableViewDelegate, UITableViewDataSource {
                 
                 DispatchQueue.main.async {
                     let vc = PreviewViewController()
-                    vc.configure(with: PreviewViewModel(title: titleName, youtubeVideo: result, titleOverView: title.overview ?? "", rating: title.vote_average , vote_count: Int(title.vote_count)))
+                    vc.configure(with: PreviewModel(title: titleName, youtubeVideo: result, titleOverView: title.overview ?? "", rating: title.vote_average , vote_count: Int(title.vote_count)))
                     self?.navigationController?.pushViewController(vc, animated: true)
                 }
             }
@@ -218,7 +218,7 @@ extension WatchLaterViewController: UITableViewDelegate, UITableViewDataSource {
             NetworkService.shared.getYouTubeResponse(with: titleName) { [weak self] result in
                 DispatchQueue.main.async {
                     let vc = PreviewViewController()
-                    vc.configure(with: PreviewViewModel(title: titleName, youtubeVideo: result, titleOverView: title.overview ?? "", rating: title.vote_average , vote_count: Int(title.vote_count)))
+                    vc.configure(with: PreviewModel(title: titleName, youtubeVideo: result, titleOverView: title.overview ?? "", rating: title.vote_average , vote_count: Int(title.vote_count)))
                     self?.navigationController?.pushViewController(vc, animated: true)
                 }
             }

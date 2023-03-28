@@ -62,7 +62,7 @@ class WatchLaterTableViewCell: UITableViewCell {
         
     }
     
-    public func configure(with model: TitleViewModel) {
+    public func configure(with model: TitleModel) {
 
         guard let url = URL(string: "https://image.tmdb.org/t/p/w500/\(model.posterURL)") else {
             return

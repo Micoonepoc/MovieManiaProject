@@ -1,6 +1,6 @@
 import Foundation
 
-struct PreviewViewModel {
+struct PreviewModel {
     let title: String
     let youtubeVideo: VideoElement
     let titleOverView: String

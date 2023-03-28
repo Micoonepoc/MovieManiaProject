@@ -1,6 +1,6 @@
 import Foundation
 
-struct TitleViewModel {
+struct TitleModel {
     let titleName: String
     let posterURL: String
     let overview: String

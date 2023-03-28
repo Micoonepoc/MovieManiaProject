@@ -167,7 +167,7 @@ class PreviewViewController: UIViewController {
         
     }
     
-    func configure(with model: PreviewViewModel) {
+    func configure(with model: PreviewModel) {
         movieNameLabel.text = model.title
         overViewLabel.text = model.titleOverView
         ratingLabel.text = "\(model.rating)"

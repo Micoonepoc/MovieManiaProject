@@ -1,7 +1,7 @@
 import UIKit
 
 protocol SearchResultsViewControllerDelegate: AnyObject {
-    func searchResultsViewControllerDidTapItem(_ viewModel: PreviewViewModel)
+    func searchResultsViewControllerDidTapItem(_ viewModel: PreviewModel)
 }
 
     class SearchResultViewController: UIViewController {
@@ -87,7 +87,7 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
                     guard let voteCount = title?.vote_count else {
                         return
                     }
-                    let viewModel = PreviewViewModel(title: titleName, youtubeVideo: result, titleOverView: titleOverview, rating: rating, vote_count: voteCount)
+                    let viewModel = PreviewModel(title: titleName, youtubeVideo: result, titleOverView: titleOverview, rating: rating, vote_count: voteCount)
                     self?.delegate?.searchResultsViewControllerDidTapItem(viewModel)
 
                 }
@@ -107,7 +107,7 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
                     guard let voteCount = title?.vote_count else {
                         return
                     }
-                    let viewModel = PreviewViewModel(title: titleName, youtubeVideo: result, titleOverView: titleOverview, rating: rating, vote_count: voteCount)
+                    let viewModel = PreviewModel(title: titleName, youtubeVideo: result, titleOverView: titleOverview, rating: rating, vote_count: voteCount)
                     self?.delegate?.searchResultsViewControllerDidTapItem(viewModel)
 
                 }
