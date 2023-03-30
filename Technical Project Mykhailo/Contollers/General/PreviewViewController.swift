@@ -181,13 +181,13 @@ class PreviewViewController: UIViewController {
     }
     
     func configurePoster() {
-        movieNameLabel.text = "Chainsaw Man"
-        overViewLabel.text = "Denji has a simple dream—to live a happy and peaceful life, spending time with a girl he likes. This is a far cry from reality, however, as Denji is forced by the yakuza into killing devils in order to pay off his crushing debts. Using his pet devil Pochita as a weapon, he is ready to do anything for a bit of cash."
-        ratingLabel.text = "8.7"
-        ratingCountLabel.text = "(945)"
+        movieNameLabel.text = "John Wick: Chapter 4 "
+        overViewLabel.text = "With the price on his head ever increasing, John Wick uncovers a path to defeating The High Table. But before he can earn his freedom, Wick must face off against a new enemy with powerful alliances across the globe and forces that turn old friends into foes."
+        ratingLabel.text = "8.2"
+        ratingCountLabel.text = "(471)"
 
         
-        guard let url = URL(string: "https://www.youtube.com/embed/j9sSzNmB5po") else {
+        guard let url = URL(string: "https://www.youtube.com/embed/qEVUtrk8_B4") else {
             return
         }
         

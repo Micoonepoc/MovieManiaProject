@@ -13,7 +13,7 @@ class PosterHeaderUIView: UIView {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.image = UIImage(named: "PosterImage")
+        imageView.image = UIImage(named: "JohnWickPoster")
         imageView.layer.cornerRadius = 10
         return imageView
     }()
@@ -39,7 +39,7 @@ class PosterHeaderUIView: UIView {
     private let posterNameImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "chainsawlogo")
+        imageView.image = UIImage(named: "JohnWickText")
         return imageView
     }()
     
@@ -83,7 +83,7 @@ class PosterHeaderUIView: UIView {
     
     @objc private func seeOnWebButtonTapped(_ sender: Any) {
         
-        if let url = URL(string: "https://www.themoviedb.org/tv/114410") {
+        if let url = URL(string: "https://www.themoviedb.org/movie/603692-john-wick-chapter-4") {
                UIApplication.shared.open(url)
            }
 
@@ -110,8 +110,8 @@ class PosterHeaderUIView: UIView {
         let posterNameImageConstraints = [
             posterNameImage.centerXAnchor.constraint(equalTo: centerXAnchor),
             posterNameImage.bottomAnchor.constraint(equalTo: playButton.topAnchor, constant: -1),
-            posterNameImage.widthAnchor.constraint(equalToConstant: 220),
-            posterNameImage.heightAnchor.constraint(equalToConstant: 50)
+            posterNameImage.widthAnchor.constraint(equalToConstant: 250),
+            posterNameImage.heightAnchor.constraint(equalToConstant: 100)
         ]
         
         NSLayoutConstraint.activate(playButtonConstraints + seeOnWebButtonConstraints + posterNameImageConstraints)
