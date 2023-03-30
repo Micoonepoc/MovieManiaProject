@@ -130,7 +130,7 @@ extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionVie
         case true:
             let title = titles[indexPath.row]
             if let titleName = title.original_title  {
-                NetworkService.shared.getYouTubeResponse(with: titleName + " trailer") { [weak self] result in
+                NetworkService.shared.getYouTubeResponse(with: titleName + "official trailer") { [weak self] result in
                     
                     let title = self?.titles[indexPath.row]
                     guard let titleOverview = title?.overview else {
@@ -153,7 +153,7 @@ extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionVie
         case false:
             let title = tvtitles[indexPath.row]
             if let titleName = title.name {
-                NetworkService.shared.getYouTubeResponse(with: titleName + " trailer") { [weak self] result in
+                NetworkService.shared.getYouTubeResponse(with: titleName + "official trailer") { [weak self] result in
                     
                     let title = self?.tvtitles[indexPath.row]
                     guard let titleOverview = title?.overview else {
