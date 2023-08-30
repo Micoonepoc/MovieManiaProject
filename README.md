@@ -27,7 +27,7 @@ This project utilizes the following technologies:
 
 ## Getting Started
 
-Follow these steps to set up "Project X" on your local machine.
+Follow these steps to set up MovieMania on your local machine.
 
 ### Installation
 
